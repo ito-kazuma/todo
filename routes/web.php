@@ -16,11 +16,11 @@ use App\Http\Controllers\Auth\LoginController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/folders/{id}/tasks', 'TaskController@in')->name('tasks.in');
+Route::get('/', 'TaskController@in')->name('tasks.in');
+       // Route::get('/', '@in'])->name('home');
 
 // Route::group(['middleware' => 'auth'], function() {
 //
-//       Route::get('/', [HomeController::class, 'index'])->name('home');
 //
 //       Route::get('/folders/create', [FolderController::class, 'showCreateForm'])->name('folders.create');
 //       Route::post('/folders/create', [FolderController::class, 'create']);
