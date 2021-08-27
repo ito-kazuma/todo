@@ -14,7 +14,7 @@ class TaskController extends Controller
 {
   public function in()
   {
-   return "Hellow world";  
+   return "Hellow world!!!!!";  
   }
    /**
    *タスク一覧
