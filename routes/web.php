@@ -17,6 +17,7 @@ use App\Http\Controllers\Auth\LoginController;
 |
 */
 Route::get('/', 'TaskController@in')->name('tasks.in');
+Route::get('/folders/{id}/tasks', 'TaskController@index')->name('tasks.index');
        // Route::get('/', '@in'])->name('home');
 
 // Route::group(['middleware' => 'auth'], function() {

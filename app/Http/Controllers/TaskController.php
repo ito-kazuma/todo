@@ -2,41 +2,55 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\EditTask;
-use App\Http\Requests\CreateTask;
+// use App\Http\Requests\EditTask;
+// use App\Http\Requests\CreateTask;
 use App\Models\Folder;
 use App\Models\Task;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
+// use Illuminate\Support\Facades\Auth;
 
 
 class TaskController extends Controller
 {
   public function in()
   {
-   return "Hellow world";  
+   return "Hellow world";
   }
-   /**
-   *タスク一覧
-   *@param Folder $folder
-   *@return \Illuminate\View\View
-   */
-    public function index(Folder $folder)
-    {
+  public function index(int $id)
+  {
+    $folders = Folder::all();
 
-      //すべてのフォルダを取得する
-      //ユーザーのフォルダを取得する
-      $folders = Auth::user()->folders()->get();
+    $current_folder = Folder::find($id);
 
-      //選ばれたフォルダに紐づくタスクを取得する
-      $tasks = $folder->tasks()->get();
+    $tasks = $current_folder->tasks()->get();
 
-      return view('tasks/index',[
-        'folders' => $folders,
-        'current_folder_id' => $folder->id,
-        'tasks' => $tasks,
-      ]);
-    }
+    return view('tasks/index', [
+      'folders' => $folders,
+      'current_folder_id' => $current_folder->id,
+      'tasks' => $tasks,
+    ]);
+  }
+   // /**
+   // *タスク一覧
+   // *@param Folder $folder
+   // *@return \Illuminate\View\View
+   // */
+   //  public function index(Folder $folder)
+   //  {
+   //
+   //    //すべてのフォルダを取得する
+   //    //ユーザーのフォルダを取得する
+   //    $folders = Auth::user()->folders()->get();
+   //
+   //    //選ばれたフォルダに紐づくタスクを取得する
+   //    $tasks = $folder->tasks()->get();
+   //
+   //    return view('tasks/index',[
+   //      'folders' => $folders,
+   //      'current_folder_id' => $folder->id,
+   //      'tasks' => $tasks,
+   //    ]);
+   //  }
 
 
     public function showCreateForm(Folder $folder)
