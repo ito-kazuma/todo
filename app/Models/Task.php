@@ -30,7 +30,7 @@ class Task extends Model
           return '';
       }
 
-      return self::STATUS[$status]['label'];
+      return self::STATUS[$status]['class'];
   }
   /**
      * 整形した期限日
