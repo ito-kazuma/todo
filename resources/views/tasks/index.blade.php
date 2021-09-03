@@ -28,7 +28,7 @@
           <div class="panel-heading">タスク</div>
           <div class="panel-body">
             <div class="text-right">
-              <a href="{{ route('tasks.create',[$current_folder_id]) }}" class="btn btn-default btn-block">
+              <a href="{{ route('tasks.create',[$folder]) }}" class="btn btn-default btn-block">
                 タスクを追加する
               </a>
             </div>

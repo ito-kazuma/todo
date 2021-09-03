@@ -5,7 +5,7 @@
     <div class="row">
       <div class="col col-md-offset-3 col-md-6">
         <div class="text-center">
-          <p>お探しのページシステムエラーです。</p>
+          <p>お探しのページはシステムエラーです。</p>
           <a href="{{ route('home') }}" class="btn">
             ホームへ戻る
           </a>
